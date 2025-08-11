@@ -1,0 +1,18 @@
+/* === Matrix Glow & Animation === */
+body {
+    font-family: 'Consolas', monospace;
+    color: #00FF00;
+    background-color: black;
+    overflow: hidden;
+}
+
+h1, h2, p, .card {
+    text-shadow: 0 0 10px #00FF00;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    background-color: rgba(0, 64, 0, 0.8);
+    box-shadow: 0 0 20px #00FF00;
+}

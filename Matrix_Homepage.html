@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NeoBrowse GX - Matrix Homepage</title>
+  <style>
+    /* === RESET & BASE === */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      background-color: black;
+      font-family: 'Consolas', monospace;
+      color: #00FF00;
+      overflow: hidden;
+    }
+
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+
+    /* === CONTAINER === */
+    .container {
+      position: relative;
+      z-index: 1;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      text-shadow: 0 0 10px #00FF00;
+    }
+
+    .grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .card {
+      background-color: rgba(0, 0, 0, 0.7);
+      border: 1px solid #00FF00;
+      border-radius: 12px;
+      padding: 20px;
+      width: 260px;
+      box-shadow: 0 0 12px #00FF00;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .card:hover {
+      background-color: rgba(0, 64, 0, 0.8);
+      transform: scale(1.05);
+    }
+
+    .card h2 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      text-shadow: 0 0 6px #00FF00;
+    }
+
+    .card p {
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    /* === FOOTER === */
+    footer {
+      margin-top: 60px;
+      font-size: 12px;
+      opacity: 0.6;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="matrixCanvas"></canvas>
+
+  <div class="container">
+    <h1>Welcome to NeoBrowse GX</h1>
+    <div class="grid">
+      <div class="card">
+        <h2>System Status</h2>
+        <p>All modules operational. Matrix sync: stable.</p>
+      </div>
+      <div class="card">
+        <h2>Offline Mode</h2>
+        <p>You're viewing this homepage without internet. All assets are local.</p>
+      </div>
+      <div class="card">
+        <h2>Next Update</h2>
+        <p>Matrix UI enhancements, tab animations, and lore-based search coming soon.</p>
+      </div>
+    </div>
+    <footer>NeoBrowse GX © 2025 — Matrix Mode Engaged</footer>
+  </div>
+
+  <script>
+    const canvas = document.getElementById("matrixCanvas");
+    const ctx = canvas.getContext("2d");
+
+    canvas.height = window.innerHeight;
+    canvas.width = window.innerWidth;
+
+    const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789アァイィウヴエェオカキクケコサシスセソタチツテトナニヌネノ";
+    const fontSize = 16;
+    const columns = canvas.width / fontSize;
+    const drops = Array(Math.floor(columns)).fill(1);
+
+    function drawMatrix() {
+      ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      ctx.fillStyle = "#0F0";
+      ctx.font = fontSize + "px monospace";
+
+      for (let i = 0; i < drops.length; i++) {
+        const text = letters[Math.floor(Math.random() * letters.length)];
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+          drops[i] = 0;
+        }
+        drops[i]++;
+      }
+    }
+
+    setInterval(drawMatrix, 50);
+
+    window.addEventListener("resize", () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+  </script>
+</body>
+</html>

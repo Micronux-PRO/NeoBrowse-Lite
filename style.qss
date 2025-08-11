@@ -1,0 +1,89 @@
+QWidget {
+    font-family: 'Consolas', monospace;
+    font-size: 14px;
+}
+
+/* === DARK MODE === */
+QWidget[theme="dark"] {
+    background-color: #000000;
+    color: #00FF00;
+}
+
+QPushButton[theme="dark"],
+QCheckBox[theme="dark"],
+QLineEdit[theme="dark"],
+QTabWidget::pane[theme="dark"],
+QTabBar::tab[theme="dark"],
+QLabel[theme="dark"] {
+    background-color: #000000;
+    color: #00FF00;
+    border: 1px solid #00FF00;
+    border-radius: 8px;
+    padding: 6px;
+}
+
+QPushButton:hover[theme="dark"],
+QCheckBox:hover[theme="dark"],
+QLineEdit:hover[theme="dark"],
+QTabBar::tab:hover[theme="dark"] {
+    background-color: #002200;
+}
+
+/* === LIGHT MODE === */
+QWidget[theme="light"] {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+QPushButton[theme="light"],
+QCheckBox[theme="light"],
+QLineEdit[theme="light"],
+QTabWidget::pane[theme="light"],
+QTabBar::tab[theme="light"],
+QLabel[theme="light"] {
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #000000;
+    border-radius: 8px;
+    padding: 6px;
+}
+
+QPushButton:hover[theme="light"],
+QCheckBox:hover[theme="light"],
+QLineEdit:hover[theme="light"],
+QTabBar::tab:hover[theme="light"] {
+    background-color: #dddddd;
+}
+
+/* === TITLE === */
+QLabel#titleLabel {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 10px;
+}
+
+/* === SEARCH BAR === */
+QLineEdit#searchBar {
+    padding: 8px;
+    font-size: 14px;
+}
+
+/* === BUTTONS === */
+QPushButton#newTabButton {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+QCheckBox#themeToggle {
+    font-size: 14px;
+}
+
+/* === TAB WIDGET === */
+QTabWidget#tabWidget::pane {
+    border: none;
+}
+
+QTabBar::tab {
+    padding: 6px 12px;
+    margin: 2px;
+}
