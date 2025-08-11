@@ -17,6 +17,6 @@ NeoBrowse-Lite is a basic browser prototype made for testing UI ideas. Built wit
 ## 🚀 Installation
 
 ```bash
-git clone https://github.com/yourusername/neobrowse-lite
+git clone https://github.com/Micronux-PRO/neobrowse-lite
 cd neobrowse-lite
 python main.py
